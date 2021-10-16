@@ -20,7 +20,7 @@ function validatorText(response) {
 
 function validatorNumber(response) {
     // Make sure the response is not a number, and that it exists
-	let validation = response && typeof response === 'number' ? true : 'This response is required and it needs to be a number! Try again!'
+	let validation = response && !isNaN(response) ? true : 'This response is required and it needs to be number! Try again!'
 	return validation;
 };
 
@@ -70,7 +70,7 @@ function menuPrompt() {
                 type: 'list',
                 name: 'menuOption',
                 message: "What would you like to do next",
-                options: [
+                choices: [
                     'Add an engineer',
                     'Add an intern',
                     'Finish building my team'
@@ -154,7 +154,7 @@ function addIntern() {
             {
                 type: 'input',
                 name: 'internSchool',
-                message: "Where did your intern atten school?",
+                message: "Where did your intern attend school?",
                 validate: validatorText
             }
         ]) 
