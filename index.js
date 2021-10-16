@@ -5,10 +5,10 @@ const inquirer = require('inquirer');
 
 const partyPeople =[];
 
-// const employee =require('./lib/employee.js');
-// const engineer = require('.lib/engineer.js');
-// const intern = require('.lib/intern.js');
-// const manager = require('.lib/manager.js');
+
+const Engineer = require('./lib/engineer.js');
+const Intern = require('./lib/intern.js');
+const Manager = require('./lib/Manager.js');
 
 
 // create function for generalized validation for questions that are required for the README
@@ -57,7 +57,12 @@ inquirer
         // then push answers object onto the array and prompt the user with next questions using seperate functions
         .then((answers) => {
             console.log(answers);
-            partyPeople.push(answers)
+            const {managerName, managerID, managerEmail, officeNum} = answers;
+            const manager = new Manager(managerName, managerID, managerEmail, officeNum);
+            
+            console.log(manager)
+            partyPeople.push(manager)
+
             menuPrompt();
         });
                    
@@ -78,13 +83,13 @@ function menuPrompt() {
             }
         ])
         .then((selection) => {
-            // ! if they want to add engineer, call engineer questions function
+            //  if they want to add engineer, call engineer questions function
             if(selection.menuOption === 'Add an engineer') {
                 addEngineer();
-            // ! else if they want to add intern, call inter questions function
+            //  else if they want to add intern, call inter questions function
             } else if (selection.menuOption === 'Add an intern') {
                 addIntern();
-            // ! else if they want to finish their team, call the finish team  function    
+            // else if they want to finish their team, call the finish team  function    
             } else if (selection.menuOption === 'Finish building my team') {
                 finishTeam();
             } else {
@@ -122,8 +127,12 @@ function addEngineer() {
                 validate: validatorText
             }
         ]) 
-        .then((engineer) => {
-            console.log(engineer);
+        .then((answers) => {
+            console.log(answers);
+            const {engineerName, engineerID, engineerEmail, engineerGitHub} = answers;
+            const engineer = new Engineer(engineerName, engineerID, engineerEmail, engineerGitHub);
+            
+            console.log(engineer)
             partyPeople.push(engineer);
             menuPrompt();
         })
@@ -158,11 +167,16 @@ function addIntern() {
                 validate: validatorText
             }
         ]) 
-        .then((intern) => {
-            console.log(intern);
+        .then((answers) => {
+            console.log(answers);
+            const {interName, internID, internEmail, internSchool} = answers;
+            const intern = new Intern(interName, internID, internEmail, internSchool);
+            
+            console.log(intern)
             partyPeople.push(intern);
-            // var newIntern = new Intern(intern);
+
             menuPrompt();
+            
         })
 }
 
