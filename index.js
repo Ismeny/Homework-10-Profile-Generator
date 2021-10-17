@@ -190,7 +190,7 @@ function addIntern() {
 }
 
 let htmlArray = [];
-let name, id, email, extra;
+let name, id, email, extra, extraName, icon;
 
 
 function finishTeam() {
@@ -198,23 +198,23 @@ function finishTeam() {
     for (let people of team) {
         let role = people.getRole();
         if (role === "Manager") {
-            let name = people.getName();
-            let id = people.getId();
-            let email = people.getEmail();
-            let extra = people.getOfficeNum();
-            let extraName = "Office";
+             name = people.getName();
+             id = people.getId();
+             email = people.getEmail();
+             extra = people.getOfficeNum();
+             extraName = "Office";
         } else if (role === "Intern") {
-            let name = people.getName();
-            let id = people.getId();
-            let email = people.getEmail();
-            let extra = people.getSchool();
-            let extraName = "School";
+             name = people.getName();
+             id = people.getId();
+             email = people.getEmail();
+             extra = people.getSchool();
+             extraName = "School";
         } else if (role === "Engineer") {
-            let name = people.getName();
-            let id = people.getId();
-            let email = people.getEmail();
-            let extra = people.getGithub();
-            let extraName = "Github";
+             name = people.getName();
+             id = people.getId();
+             email = people.getEmail();
+             extra = people.getGithub();
+             extraName = "Github";
         }
         let obj = {
             name: name,
@@ -262,7 +262,7 @@ function generateHtml(htmlArray) {
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">${employee.id}ID:</li>
                   <li class="list-group-item">${employee.email}Email:</li>
-                  <li class="list-group-item">${employee.extra}Office Number:</li>
+                  <li class="list-group-item">${employee.extra} ${extraStuff}Office Number:</li>
                 </ul>
               </div>
             </div>
@@ -274,6 +274,14 @@ function generateHtml(htmlArray) {
         `</body>
         </html>`
     )
+
+    writeHtml(htmlString);
+}
+
+function writeHtml(data) {
+    fs.writeFile("index.html", `${data}`, (err) => {
+        err ? console.log(err) : console.log("It works!")
+    })
 }
 
 init();
