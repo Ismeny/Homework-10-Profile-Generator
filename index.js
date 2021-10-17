@@ -1,9 +1,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-// const { addListener } = require('process');
-// const teamHTML = require('team.html')
 
-const partyPeople =[];
+
+const team =[];
 
 
 const Engineer = require('./lib/engineer.js');
@@ -61,7 +60,7 @@ inquirer
             const manager = new Manager(managerName, managerID, managerEmail, officeNum);
             
             console.log(manager)
-            partyPeople.push(manager)
+            team.push(manager)
 
             menuPrompt();
         });
@@ -133,7 +132,7 @@ function addEngineer() {
             const engineer = new Engineer(engineerName, engineerID, engineerEmail, engineerGitHub);
             
             console.log(engineer)
-            partyPeople.push(engineer);
+            team.push(engineer);
             menuPrompt();
         })
 }
@@ -169,11 +168,11 @@ function addIntern() {
         ]) 
         .then((answers) => {
             console.log(answers);
-            const {interName, internID, internEmail, internSchool} = answers;
-            const intern = new Intern(interName, internID, internEmail, internSchool);
+            const {internName, internID, internEmail, internSchool} = answers;
+            const intern = new Intern(internName, internID, internEmail, internSchool);
             
             console.log(intern)
-            partyPeople.push(intern);
+            team.push(intern);
 
             menuPrompt();
             
