@@ -15,7 +15,7 @@ describe ('Manager', () => {
         it('should return the name of the manager instance that was created', () => {
             const manager2 = new Manager("Ismeny", 222, "meny2@gmail.com", 512);
             const result = manager2.getName();
-            except(result).toEqual("Ismeny")
+            expect(result).toEqual("Ismeny")
         }
         )
     })
@@ -24,7 +24,7 @@ describe ('Manager', () => {
         it('should return the id of the manager instance that was created', () => {
             const manager3 = new Manager("Ismeny", 222, "meny2@gmail.com", 512);
             const result = manager3.getId();
-            except(result).toEqual(222)
+            expect(result).toEqual(222)
         }
         )
     })
@@ -33,7 +33,7 @@ describe ('Manager', () => {
         it('should return the email of the manager instance that was created', () => {
             const manager4 = new Manager("Ismeny", 222, "meny2@gmail.com", 512);
             const result = manager4.getEmail();
-            except(result).toEqual("meny2@gmail.com")
+            expect(result).toEqual("meny2@gmail.com")
         }
         )
     })
@@ -42,7 +42,7 @@ describe ('Manager', () => {
         it("should return 'manager' ", () => {
             const manager5 = new Manager("Ismeny", 222, "meny2@gmail.com", 512);
             const result = manager5.getRole();
-            except(result).toEqual("manager")
+            expect(result).toEqual("Manager")
         }
         )
     })

@@ -14,7 +14,7 @@ describe ('Employee', () => {
         it('should return the name of the employee instance that was created', () => {
             const employee2 = new Employee("Ismeny", 222, "meny2@gmail.com");
             const result = employee2.getName();
-            except(result).toEqual("Ismeny")
+            expect(result).toEqual("Ismeny")
         }
         )
     })
@@ -23,7 +23,7 @@ describe ('Employee', () => {
         it('should return the id of the employee instance that was created', () => {
             const employee3 = new Employee("Ismeny", 222, "meny2@gmail.com");
             const result = employee3.getId();
-            except(result).toEqual(222)
+            expect(result).toEqual(222)
         }
         )
     })
@@ -32,7 +32,7 @@ describe ('Employee', () => {
         it('should return the email of the employee instance that was created', () => {
             const employee4 = new Employee("Ismeny", 222, "meny2@gmail.com");
             const result = employee4.getEmail();
-            except(result).toEqual("meny2@gmail.com")
+            expect(result).toEqual("meny2@gmail.com")
         }
         )
     })
@@ -41,7 +41,7 @@ describe ('Employee', () => {
         it("should return 'Employee' ", () => {
             const employee5 = new Employee("Ismeny", 222, "meny2@gmail.com");
             const result = employee5.getRole();
-            except(result).toEqual("Employee")
+            expect(result).toEqual("Employee")
         }
         )
     })

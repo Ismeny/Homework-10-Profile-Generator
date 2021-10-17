@@ -15,7 +15,7 @@ describe ('engineer', () => {
         it('should return the name of the engineer instance that was created', () => {
             const engineer2 = new Engineer("Ismeny", 222, "meny2@gmail.com", "meny2");
             const result = engineer2.getName();
-            except(result).toEqual("Ismeny")
+            expect(result).toEqual("Ismeny")
         }
         )
     })
@@ -24,7 +24,7 @@ describe ('engineer', () => {
         it('should return the id of the engineer instance that was created', () => {
             const engineer3 = new Engineer("Ismeny", 222, "meny2@gmail.com", "meny2");
             const result = engineer3.getId();
-            except(result).toEqual(222)
+            expect(result).toEqual(222)
         }
         )
     })
@@ -33,7 +33,7 @@ describe ('engineer', () => {
         it('should return the email of the engineer instance that was created', () => {
             const engineer4 = new Engineer("Ismeny", 222, "meny2@gmail.com", "meny2");
             const result = engineer4.getEmail();
-            except(result).toEqual("meny2@gmail.com")
+            expect(result).toEqual("meny2@gmail.com")
         }
         )
     })
@@ -42,7 +42,7 @@ describe ('engineer', () => {
         it("should return 'engineer' ", () => {
             const engineer5 = new Engineer("Ismeny", 222, "meny2@gmail.com", "meny2");
             const result = engineer5.getRole();
-            except(result).toEqual("engineer")
+            expect(result).toEqual("Engineer")
         }
         )
     })
@@ -51,7 +51,7 @@ describe ('engineer', () => {
         it('should return the github username of the engineer instance that was created', () => {
             const engineer6 = new Engineer("Ismeny", 222, "meny2@gmail.com", "meny2");
             const result = engineer6.getGithub();
-            except(result).toEqual("meny2@gmail.com")
+            expect(result).toEqual("meny2")
         }
         )
     })
