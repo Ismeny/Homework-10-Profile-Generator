@@ -179,8 +179,38 @@ function addIntern() {
         })
 }
 
+let htmlArray = [];
+
+
 function finishTeam() {
     console.log("We're finished!")
+    for (let people of team) {
+        let role = people.getRole();
+        if (role === "Manager") {
+            let name = people.getName();
+            let id = people.getId();
+            let email = people.getEmail();
+            let extra = people.getOfficeNum();
+        } else if (role === "Intern") {
+            let name = people.getName();
+            let id = people.getId();
+            let email = people.getEmail();
+            let extra = people.getSchool();
+        }else if (role === "Engineer") {
+            let name = people.getName();
+            let id = people.getId();
+            let email = people.getEmail();
+            let extra = people.getGithub();
+        }
+        let obj = {
+            name: name,
+            id: id,
+            email: email,
+            extra: extra,
+        }
+        htmlArray.push(obj);
+    }
+    generateHtml(htmlArray);
 }
 
 init();
