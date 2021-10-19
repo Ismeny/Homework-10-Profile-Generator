@@ -1,7 +1,7 @@
 # Homework-10-Profile-Generator
 
 ## Description
-
+This application accepts user input and then generates and HTML file that displays a formatted team roster based on the user input. 
 
 
 ## Table of contents
@@ -14,14 +14,13 @@
   
 
 ## Installation
-Video link  : ******
+Video link  : ***https://watch.screencastify.com/v/SNrWmMURwBFaj8HG01gh***
 
-![Screenshot]()
+![Screenshot](myteam.png)
 
 
 ## Usage
-
-
+When you run command "node index.js" the user will be prompted for team information. There are several questions that must be answered and will only be captured if they are in the correct format due to the validation on the input. After you answer all questions for your team you will select the "Finish team" option which will then generate the HTML file you can open in your browser. You will be presented with a card for each team member you entered information for. 
 
 ## Credits
 Uses the Inquierer Package <br>
