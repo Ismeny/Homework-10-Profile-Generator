@@ -192,7 +192,6 @@ function addIntern() {
 let htmlArray = [];
 let name, id, email, extra, extraName, icon;
 
-
 function finishTeam() {
     console.log("We're finished!")
     for (let people of team) {
@@ -203,30 +202,39 @@ function finishTeam() {
              email = people.getEmail();
              extra = people.getOfficeNum();
              extraName = "Office";
+             icon = '<i class="fas fa-mug-hot"></i>';
         } else if (role === "Intern") {
              name = people.getName();
              id = people.getId();
              email = people.getEmail();
              extra = people.getSchool();
              extraName = "School";
+             icon = '<i class="fas fa-user-graduate"></i>'
         } else if (role === "Engineer") {
              name = people.getName();
              id = people.getId();
              email = people.getEmail();
              extra = people.getGithub();
              extraName = "Github";
+             icon = '<i class="fas fa-glasses"></i>';
         }
         let obj = {
             name: name,
             id: id,
             email: email,
             extra: extra,
+            extraName: extraName,
             role: role,
+            icon: icon,
         }
         htmlArray.push(obj);
     }
     generateHtml(htmlArray);
 }
+
+
+
+
 
 function generateHtml(htmlArray) {
     let htmlString = `
@@ -239,10 +247,12 @@ function generateHtml(htmlArray) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src=“https://kit.fontawesome.com/afc27ebdff.js” crossorigin=“anonymous”></script>
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/4714a0b316.js" crossorigin="anonymous"></script>
+    <title>My Team</title>
 </head>
 <body>
+    <h1 style="color:white; text-align: center; background-color: black; font-size: 50px; padding: 25px;"> My Team </h1>
+    <div id="team-cards" class="container d-flex flex-wrap justify-content-center align-items-center">
     `
     for(let employee of htmlArray) {
         if (employee.extraName === "Github") {
@@ -253,16 +263,16 @@ function generateHtml(htmlArray) {
         htmlString = htmlString.concat(
             `<div id="card" class="card" style="width: 17.75rem;">
             <div class="card-body">
-              <h5 class="card-title">${employee.name}manager name</h5>
+              <h5 class="card-title">${employee.name}</h5>
               <h6 class="card-subtitle mb-2 text-muted">
-                <i class="fas fa-mug-hot">${employee.role}</i>  
-                Manager
+                ${employee.icon} ${employee.role}</i>  
+                
             </h6>
             <div class="card" style="width: 15rem;">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">${employee.id}ID:</li>
-                  <li class="list-group-item">${employee.email}Email:</li>
-                  <li class="list-group-item">${employee.extra} ${extraStuff}Office Number:</li>
+                  <li class="list-group-item">ID:${employee.id}</li>
+                  <li class="list-group-item">Email:${employee.email}</li>
+                  <li class="list-group-item">${employee.extraName}: ${employee.extra}</li>
                 </ul>
               </div>
             </div>
@@ -287,9 +297,3 @@ function writeHtml(data) {
 init();
 
 
-// let obj = {
-//     name: name,
-//     id: id,
-//     email: email,
-//     extra: extra,
-//role: role,

@@ -47,4 +47,11 @@ describe ('Manager', () => {
         )
     })
 
+    describe("getOfficeNum", () => {
+        it("should return the office number of the manager instance that was created", () => {
+            const manager6 = new Manager("Ismeny", 222, "meny2@gmail.com", 512);
+            const result = manager6.getOfficeNum();
+            expect(result).toEqual(512);
+        })
+    })
 })
