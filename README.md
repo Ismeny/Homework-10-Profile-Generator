@@ -1,4 +1,4 @@
-# Homework-10-Profile-Generator
+# Team-Profile-Generator
 
 ## Description
 This application accepts user input and then generates and HTML file that displays a formatted team roster based on the user input. 

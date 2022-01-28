@@ -1,5 +1,5 @@
 {
-  "name": "Homework-10-Profile-Generator",
+  "name": "Team-Profile-Generator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ismeny/Homework-10-Profile-Generator.git"
+    "url": "git+https://github.com/Ismeny/Team-Profile-Generator.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ismeny/Homework-10-Profile-Generator/issues"
+    "url": "https://github.com/Ismeny/Team-Profile-Generator/issues"
   },
-  "homepage": "https://github.com/Ismeny/Homework-10-Profile-Generator#readme",
+  "homepage": "https://github.com/Ismeny/Team-Profile-Generator#readme",
   "dependencies": {
     "inquirer": "^8.2.0"
   },
